@@ -1,0 +1,121 @@
+*{
+  box-sizing: border-box;
+}
+
+:root{
+  --light-green:#fbfefd;
+  --light-black:#8c8c8c;
+  --pale-pink:#f8a69c;
+  --dark-green:#069c54;
+}
+body{
+  background-color: var(--pale-pink);
+}
+.circumference{
+  width: 300px;
+  height: 300px;
+  border: 2px solid var(--light-green) ;
+  border-radius: 50%;
+  /* min-width: 300px; */
+  margin: 100px auto;
+  position: relative;
+}
+
+
+.circumference .hour{
+  --rotation:0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /* background-color: red; */
+  text-align: center;
+  transform: rotate(var(--rotation));
+}
+
+
+.circumference .hour-1{
+  --rotation: 30deg;
+}
+.circumference .hour-2{
+  --rotation: 60deg;
+}
+.circumference .hour-3{
+  --rotation: 90deg;
+}
+.circumference .hour-4{
+  --rotation: 120deg;
+}
+.circumference .hour-5{
+  --rotation: 150deg;
+}
+.circumference .hour-6{
+  --rotation: 180deg;
+}
+.circumference .hour-7{
+  --rotation: 210deg;
+}
+.circumference .hour-8{
+  --rotation: 240deg;
+}
+.circumference .hour-9{
+  --rotation: 270deg;
+}
+.circumference .hour-10{
+  --rotation: 300deg;
+}
+.circumference .hour-11{
+  --rotation: 330deg;
+}
+
+
+.name{
+  position: absolute;
+  top: 80px;
+  left: 125px;
+}
+
+.circumference .hand{
+  --rotation: 0;
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  background-color: var(--light-black);
+  border: 1px solid var(--light-green);
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+  transform-origin: bottom;
+
+}
+
+
+.circumference::after{
+  content: '';
+  position: absolute;
+  background: var(--light-black);
+  z-index: 11;
+  width: 15px;
+  height: 15px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+}
+
+.circumference .hand.Second{
+  width: 3px;
+  height: 40% ;
+}
+
+.circumference .hand.Minute{
+  width: 5px;
+  height: 35% ;
+  background-color: var(--dark-green);
+}
+.circumference .hand.Hour{
+  width: 8px;
+  height: 20% ;
+  background-color: red;
+}
+
